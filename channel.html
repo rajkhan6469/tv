@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FERDOS BHAI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="ENJOY FREE LIVE TV">
+    <meta name="keywords" content="LIVETV, SPORTS, MOVIES, MUSIC">
+    <meta name="author" content="Ferdos Bhai">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+    <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+    <script src="assets/js/jwplayer.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/VLV8Lp3w/avatar-1002046717675.jpg">
+<link rel="stylesheet" type="text/css" href="./codenine_skin.css">
+    <script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
+ 
+
+    </style>
+    </style>
+</head>
+
+<body>
+
+    <div id="my-video"></div>
+
+    <script type="text/javascript">
+        var playerInstance = jwplayer("my-video");
+
+        playerInstance.setup({
+            file: "http://217.20.112.199/zeecinema/index.m3u8",
+            width: "100%",
+            height: "100%",
+            aspectratio: "16:9",
+            controls: true,
+            stretching: "uniform",
+            autostart: true,
+            allowfullscreen: true,
+            pip: true,  // PiP মোড সক্রিয় করা
+            skin: {
+                name: "@fredflix1"
+            }
+        });
+
+        playerInstance.on('play', function() {
+            playerInstance.setFullscreen(false);  // প্লে শুরু হলে ফুলস্ক্রিন মোডে প্রবেশ
+        });
+
+    </script>
+</body>
+
+</html>
+

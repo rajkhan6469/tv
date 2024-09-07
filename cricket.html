@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferdos Bhai</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<video id="video" controls></video>
+
+<script>
+    if (Hls.isSupported()) {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('https://st4.1ten.live/memfs/568b48e8-998c-4233-8777-489cc822d8c7.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+        });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = ':https://st4.1ten.live/memfs/568b48e8-998c-4233-8777-489cc822d8c7.m3u8';
+        video.addEventListener('loadedmetadata', function() {
+            video.play();
+        });
+    }
+</script>
+
+</body>
+</html>
+
